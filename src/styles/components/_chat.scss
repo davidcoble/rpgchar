@@ -1,0 +1,31 @@
+.chatDiv {
+  background: #CCC;
+  display: block;
+  top: 76px;
+  left: 200px;
+  width: 600px;
+  height: 100%;
+  position: fixed;
+}
+
+div.navDiv {
+
+}
+
+.nav__link {
+  color: #999;
+  font-size: $m-size;
+  padding-right: 5px;
+}
+
+.title {
+  font-size: $l-size;
+  justify-content: center;
+
+}
+
+@media (max-width: 45rem) {
+  .nav {
+    top: 80px;
+  }
+}

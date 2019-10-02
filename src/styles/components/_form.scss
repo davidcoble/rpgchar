@@ -1,0 +1,94 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  >* {
+    margin-bottom: $m-size;
+  }
+}
+
+.form__error {
+  margin: 0 0 $m-size 0;
+  font-style: italic;
+}
+
+.rowForm {
+  display: flex;
+  flex-direction: row;
+}
+
+.rowForm-right {
+  display: inline;
+  margin: 0 0 0 auto;
+}
+
+.colForm {
+  display: flex;
+  flex-direction: column;
+  font-size: small;
+}
+
+.colForm-descr {
+  @extend .colForm;
+  width: 300px;
+}
+.colForm-time {
+  @extend .colForm;
+  width: 150px;
+}
+.colForm-name {
+  @extend .colForm;
+  width: 200px;
+}
+
+.line-grey {
+  background-color: #CCC;
+}
+
+.line-blue {
+  background-color: #CCF;
+}
+
+.colForm-turn {
+  @extend .colForm;
+  width: 120px;
+}
+
+.colForm-delete {
+  @extend .colForm;
+  width: 40px;
+
+}
+
+.colForm-dice {
+  @extend .colForm;
+  width: 40px;
+}
+.colForm-sides {
+  @extend .colForm;
+  width: 40px;
+}
+.colForm-mods {
+  @extend .colForm;
+  width: 40px;
+}
+.colForm-other {
+  @extend .colForm;
+  width: 40px;
+}
+.colForm-form-sides {
+  @extend .colForm;
+  width: 60px;
+}
+.colForm-result {
+  @extend .colForm;
+  width: 120px;
+}
+.colForm-epilogue {
+  @extend .colForm;
+  width: 400px;
+}
+
+.turnListArea {
+  height: 400px;
+  width: 15em;
+}
