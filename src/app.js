@@ -3,14 +3,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import AppRouter, { history } from './routers/AppRouter';
 import configureStore from './store/configureStore';
-import { startSetPlayers} from "./actions/players";
-import { startSetLoggedIn } from "./actions/auth";
-import { startMakePlayerAdmin } from "./actions/players";
-import { startSetBoxes } from "./actions/boxes";
-import { startSetRolls } from "./actions/rolls";
-import { startSetExpenses } from "./actions/expenses";
-import { startSetGames } from "./actions/games";
-import { login, logout } from './actions/auth';
+import { startSetLoggedIn, login, logout } from './actions/auth';
 import 'normalize.css/normalize.css';
 import './styles/styles.scss';
 import 'react-dates/lib/css/_datepicker.css';
@@ -46,20 +39,9 @@ firebase.auth().onAuthStateChanged((user) => {
         store.dispatch(login(auth));
         store.dispatch(startSetLoggedIn())
             .then(() => {
-                if(user.uid == 'dyMIEyrAb8T4PgLkIeVrpxLSPkE3') {
-                    store.dispatch(startMakePlayerAdmin(user.uid, true));
-                }
-            })
-            .then(store.dispatch(startSetPlayers()))
-            .then(store.dispatch(startSetLoggedIn()))
-            .then(store.dispatch(startSetBoxes()))
-            .then(store.dispatch(startSetRolls()))
-            .then(store.dispatch(startSetExpenses()))
-            .then(store.dispatch(startSetGames()))
-            .then(() => {
                 renderApp();
                 if (history.location.pathname === '/') {
-                    history.push('/players');
+                    history.push('/');
                 }
             });
     } else {
