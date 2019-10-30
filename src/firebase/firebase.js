@@ -1,14 +1,15 @@
 import * as firebase from 'firebase';
 
 const config = {
-  apiKey: process.env.FIREBASE_API_KEY,
-  authDomain: process.env.FIREBASE_AUTH_DOMAIN,
-  databaseURL: process.env.FIREBASE_DATABASE_URL,
-  projectId: process.env.FIREBASE_PROJECT_ID,
-  storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID
+  apiKey: "AIzaSyAiAlWjq2VdmC76M0SOUkP2XjfFlYkAm3c",
+  authDomain: "rpgchar-coble.firebaseapp.com",
+  databaseURL: "https://rpgchar-coble.firebaseio.com",
+  projectId: "rpgchar-coble",
+  storageBucket: "",
+  messagingSenderId: "1059731447068",
+  appId: "1:1059731447068:web:2d5840297d6f5b9f6f2ed9"
 };
-
+console.log("firebase config = " + JSON.stringify(config, null, 2));
 firebase.initializeApp(config);
 
 const database = firebase.database();

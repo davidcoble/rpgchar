@@ -7,6 +7,8 @@ import PrivateRoute from './PrivateRoute';
 import PublicRoute from './PublicRoute';
 import { startSaveUserPage } from '../actions/auth';
 import connect from "react-redux/es/connect/connect";
+import ManageCharacters from "../components/chars/ManageCharacters";
+import CreateCharacter from "../components/chars/CreateCharacter";
 
 export const history = createBrowserHistory();
 
@@ -20,6 +22,8 @@ const AppRouter = ({startSaveUserPage}) => {
                 <Switch>
                     <PublicRoute path="/" component={LoginPage} exact={true}/>
                     <PublicRoute path="/table" component={NotFoundPage}/>
+                    <PrivateRoute path="/char" component={ManageCharacters}/>
+                    <PrivateRoute path="/createchar" component={CreateCharacter}/>
                     <PrivateRoute path="/secretTable" component={NotFoundPage}/>
                     <Route component={NotFoundPage}/>
                 </Switch>

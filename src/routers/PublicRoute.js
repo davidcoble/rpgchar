@@ -8,7 +8,11 @@ export const PublicRoute = ({
                                 ...rest
                             }) => (
     <Route {...rest} component={(props) => (
-        <Component {...props} />
+        isAuthenticated ? (
+            <Redirect to='/char'/>
+        ) : (
+            <Component {...props} />
+        )
     )} />
 );
 
